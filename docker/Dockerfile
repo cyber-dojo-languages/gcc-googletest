@@ -1,4 +1,9 @@
-FROM  cyberdojofoundation/gpp_googletest
+FROM  cyberdojofoundation/gcc:7.3.0
 LABEL maintainer=jon@jaggersoft.com
+
+ADD install.sh /
+
+RUN /install.sh \
+  && rm -f /install.sh
 
 COPY red_amber_green.rb /usr/local/bin
