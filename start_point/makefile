@@ -1,5 +1,13 @@
-CXXFLAGS += -I. -std=c++17 -Wall -Wextra -Werror
-CFLAGS += -I. -std=c11 -Wall -Wextra -Werror
+CXXFLAGS += -I.
+CXXFLAGS += -std=c++17
+CXXFLAGS += -Wall -Wextra -Werror
+CXXFLAGS += -fprofile-arcs -ftest-coverage
+
+CFLAGS += -I.
+CFLAGS += -std=c11
+CFLAGS += -Wall -Wextra -Werror
+CFLAGS += -fprofile-arcs -ftest-coverage
+
 GTEST_LIBS = -lgtest -lgtest_main -pthread
 
 HPP_FILES = $(wildcard *.hpp)
@@ -32,7 +40,6 @@ test: makefile $(COMPILED_CPP_FILES) $(COMPILED_C_FILES) $(COMPILED_HPP_FILES)
 
 %.compiled_hpp: %.hpp
 	@$(CXX) -x c++ $(CXXFLAGS) -c -o $@ $<
-
 
 %.compiled_h: %.h
 	@$(C) -x c $(CFLAGS) -c -o $@ $<
