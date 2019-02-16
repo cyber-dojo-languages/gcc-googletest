@@ -14,7 +14,5 @@
 
   "image_name": "cyberdojofoundation/gcc_googletest",
 
-  "runner_choice": "stateless",
-
   "filename_extension": [ ".c", ".h", ".cpp" ]
 }
