@@ -1,10 +1,10 @@
 CXXFLAGS += -I.
-CXXFLAGS += -std=c++17
+CXXFLAGS += -std=c++2a
 CXXFLAGS += -Wall -Wextra
 CXXFLAGS += -fprofile-arcs -ftest-coverage
 
 CFLAGS += -I.
-CFLAGS += -std=c11
+CFLAGS += -std=c18
 CFLAGS += -Wall -Wextra -Werror
 CFLAGS += -fprofile-arcs -ftest-coverage
 
@@ -24,7 +24,7 @@ COMPILED_C_FILES = $(patsubst %.c,%.o,$(C_FILES))
 test.output: test makefile
 	@./$< --gtest_shuffle
 
-test: makefile $(COMPILED_CPP_FILES) $(COMPILED_C_FILES) $(COMPILED_HPP_FILES)
+test: $(COMPILED_CPP_FILES) $(COMPILED_C_FILES) $(COMPILED_HPP_FILES)
 	@$(CXX) $(CXXFLAGS) -O $(COMPILED_CPP_FILES) $(COMPILED_C_FILES) $(GTEST_LIBS) -o $@
 
 %.o: %.cpp
