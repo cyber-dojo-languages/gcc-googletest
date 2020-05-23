@@ -1,4 +1,3 @@
-
 {
   "image_name": "cyberdojofoundation/gcc_googletest",
   "display_name": "C (gcc), GoogleTest",
@@ -12,6 +11,5 @@
   ],
   "filename_extension": [ ".c", ".h", ".cpp", ".hpp" ],
   "max_seconds": 10,
-  "tab_size": 4,
-  "hidden_filenames": [ ".*\\.gcov", ".*\\.gcno" ]
+  "tab_size": 4
 }
